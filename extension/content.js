@@ -1,26 +1,25 @@
 /******/ (() => { // webpackBootstrap
-var __webpack_exports__ = {};
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-class ChatGPTExtension {
-  constructor() {
-    this.handleRequest();
-  }
-  handleRequest() {
-    chrome.runtime.onMessage.addListener(async (request, sender, response) => {
-      if (request.action == "PROMPT") this.promptToChatGPT();
-      console.log(request);
-    });
-  }
-  promptToChatGPT() {
-    const propmt = "From now on, if you need to write a mathematical expression, use katex notation and follow these rules:\n1. If it is a block equation, display it in a single P element and wrap it with double dollar signs like this:\n\n$$e=mc^{2}$$\n\n2. If it is an inline equation, use the two backslash and parenthesis notation of katex, like this: \\(e^{i \\\pi}-1=0\\).\n\nCan you give me an example of a block equation to see that you understand?";
-    const input = document.querySelector("textarea");
-    input.value = prompt;
-    document.querySelector("textarea~button").click();
-  }
-}
-const CGPTExtension = new ChatGPTExtension();
+/***/ (() => {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/src/index.js: Unexpected token (25:6)\n\n\u001b[0m \u001b[90m 23 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 25 |\u001b[39m \u001b[36mconst\u001b[39m \u001b[33mCGPTExtension\u001b[39m \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mChatGPTExtension\u001b[39m()\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 26 |\u001b[39m\u001b[0m\n    at instantiate (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:653:32)\n    at constructor (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:947:12)\n    at Parser.raise (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:3261:19)\n    at Parser.unexpected (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:3291:16)\n    at Parser.parseClassMemberWithIsStatic (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:13485:12)\n    at Parser.parseClassMember (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:13373:10)\n    at /Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:13323:14\n    at Parser.withSmartMixTopicForbiddingContext (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:12232:14)\n    at Parser.parseClassBody (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:13303:10)\n    at Parser.parseClass (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:13281:22)\n    at Parser.parseStatementContent (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:12573:21)\n    at Parser.parseStatementLike (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:12544:17)\n    at Parser.parseModuleItem (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:12521:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:13116:36)\n    at Parser.parseBlockBody (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:13109:10)\n    at Parser.parseProgram (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:12435:10)\n    at Parser.parseTopLevel (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:12425:25)\n    at Parser.parse (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:14245:10)\n    at parse (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/parser/lib/index.js:14286:38)\n    at parser (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/core/lib/parser/index.js:41:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/core/lib/transformation/normalize-file.js:64:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/core/lib/transformation/index.js:21:50)\n    at run.next (<anonymous>)\n    at transform (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/core/lib/transform.js:22:41)\n    at transform.next (<anonymous>)\n    at step (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/gensync/index.js:261:32)\n    at /Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/gensync/index.js:273:13\n    at async.call.result.err.err (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/gensync/index.js:223:11)\n    at /Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/gensync/index.js:189:28\n    at /Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/@babel/core/lib/gensync-utils/async.js:68:7\n    at /Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/gensync/index.js:113:33\n    at step (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/gensync/index.js:287:14)\n    at /Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/gensync/index.js:273:13\n    at async.call.result.err.err (/Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/gensync/index.js:223:11)\n    at /Users/anapedra/Desktop/Full-Stack projects/Create-a-Chrome-Extension-with-Manifest-V3-for-ChatGPT/node_modules/gensync/index.js:37:40");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./src/index.js"]();
+/******/ 	
 /******/ })()
 ;
 //# sourceMappingURL=content.js.map
