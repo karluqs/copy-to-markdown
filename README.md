@@ -4,7 +4,7 @@
 
 ## Install
 
-- [**Chrome** extension][link-cws] [<img valign="middle" src="https://chromewebstore.google.com/detail/copy-to-markdown/lpfdjbehlconlhkoamapmpimmedmebmf">][link-cws]
+- [**Chrome** extension][https://chromewebstore.google.com/detail/copy-to-markdown/lpfdjbehlconlhkoamapmpimmedmebmf]
 
 
 ## Screenshot
@@ -44,5 +44,3 @@ This versions fixes sub lists bug on markdown generation.
 ## License
 
 [MIT](license)
-
-[link-cws]: https://chrome.google.com/webstore/detail/copy-to-markdown/nlaionblcaejecbkcillglodmmfhjhfi/
