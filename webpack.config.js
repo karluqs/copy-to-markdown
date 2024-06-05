@@ -1,47 +1,39 @@
-const fs = require('fs');
+const webpack = require('webpack');
 const path = require('path');
-
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const DefinePlugin = require('webpack').DefinePlugin;
 
-module.exports = {
-	devtool: 'sourcemap',
-	stats: 'errors-only',
-	entry: {
-		'copy-as-markdown': './source/copy-as-markdown.js'
-	},
-	output: {
-		path: path.join(__dirname, 'distribution'),
-		filename: '[name].js'
-	},
+const config = {
+  entry: './src/copy-to-markdown.js',
+  output: {
+    path: path.resolve(__dirname, 'extension'),
+    filename: 'content.js'
+  },
+  devtool: 'source-map',
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/
+      }
+    ]
+  },
 	plugins: [
-		new DefinePlugin({
-			__INJECTIBLE_CODE__: JSON.stringify(fs.readFileSync('./source/injectible-code.js', 'utf-8'))
-		}),
-		new CopyWebpackPlugin([
-			{
-				from: '**/*',
-				context: 'source',
-				ignore: ['*.js']
-			},
-			{
-				from: 'node_modules/webextension-polyfill/dist/browser-polyfill.min.js'
-			}
-		])
+    new webpack.ProvidePlugin(
+      {
+        process: 'process/browser',
+      }
+   ),
 	],
-	optimization: {
-		minimizer: [
-			new TerserPlugin({
-				terserOptions: {
-					mangle: false,
-					compress: false,
-					output: {
-						beautify: true,
-						indent_level: 2 // eslint-disable-line camelcase
-					}
-				}
-			})
-		]
-	}
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          output: { ascii_only: true },
+        },
+      }),
+    ],
+  },
 };
+
+module.exports = config;
