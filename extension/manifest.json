@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Hola Eduard!",
-  "description": "This is my awesome description",
-  "version": "1.0.1",
+	"name": "Copy To Markdown",
+  "description": "Copy the selection on rich text editors to markdown",
+	"homepage_url": "https://github.com/karluqs/copy-to-markdown",
+  "version": "1.0.0",
   "icons": {
     "16": "icons/icon.png",
     "32": "icons/icon.png",
@@ -10,7 +11,8 @@
     "128": "icons/icon.png"
   },
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "content.js",
+    "type": "module"
   },
   "action": {
     "default_icon": {
@@ -18,15 +20,12 @@
       "32": "icons/icon.png",
       "48": "icons/icon.png",
       "128": "icons/icon.png"
-    },
-    "permissions": ["tabs","activeTab"],
-    "default_popup": "./popup/popup.html"
-  },
-  "content_scripts": [
-    {
-      "js": ["./content.js"],
-      "matches": ["*://chat.openai.com/*"],
-      "run_at": "document_end"
     }
+  },
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "clipboardWrite",
+    "scripting"
   ]
 }

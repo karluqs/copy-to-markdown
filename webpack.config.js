@@ -2,9 +2,8 @@ const webpack = require('webpack');
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 
-
 const config = {
-  entry: './src/index.js',
+  entry: './src/copy-to-markdown.js',
   output: {
     path: path.resolve(__dirname, 'extension'),
     filename: 'content.js'
@@ -19,6 +18,13 @@ const config = {
       }
     ]
   },
+	plugins: [
+    new webpack.ProvidePlugin(
+      {
+        process: 'process/browser',
+      }
+   ),
+	],
   optimization: {
     minimizer: [
       new TerserPlugin({
