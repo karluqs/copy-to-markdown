@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
 	"name": "Copy To Markdown",
-  "description": "Copy the selection on rich text editors to markdown",
+  "description": "Copy the hyperlinks, images and selected text converting to markdown format.",
 	"homepage_url": "https://github.com/karluqs/copy-to-markdown",
   "version": "1.0.0",
   "icons": {
