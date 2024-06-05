@@ -1,4 +1,4 @@
-# <img src="source/copy-to-markdown.png" width="45" align="left"> Copy to Markdown
+# <img src="extension/icons/icon.png" width="45" align="left"> Copy to Markdown
 
 > Browser extension to copy hyperlinks, images, and convert text to Markdown
 
