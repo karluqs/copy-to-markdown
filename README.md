@@ -30,9 +30,9 @@ The extension allows you to copy selected text on a page and convert it to Markd
 The extension requires the following permission from you for working.
 
 1. `contextMenus`: to show option when right-clicking.
-1. `activeTab`: to be able to access content on page.
-1. `clipboardWrite`: to be able to write data to clipboard (we still can’t read from your clipboard).
-1. `scripting`: to be able to execute the conversion to markdown and write data to clipboard.
+2. `activeTab`: to be able to access content on page.
+3. `clipboardWrite`: to be able to write data to clipboard (we still can’t read from your clipboard).
+4. `scripting`: to be able to execute the conversion to markdown and write data to clipboard.
 
 
 ## Credits
