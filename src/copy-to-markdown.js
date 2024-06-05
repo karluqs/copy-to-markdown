@@ -6,7 +6,7 @@ const contexts = ['image', 'link', 'selection'];
 for (const context of contexts) {
   browser.contextMenus.create({
     id: `cpy-as-md:${context}`,
-    title: `Copy ${context} as Markdown`,
+    title: `Copy ${context} to Markdown`,
     contexts: [context]
   });
 }
