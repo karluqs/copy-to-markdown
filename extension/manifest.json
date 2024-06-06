@@ -3,7 +3,7 @@
 	"name": "Copy To Markdown",
   "description": "Copy the hyperlinks, images and selected text converting to markdown format.",
 	"homepage_url": "https://github.com/karluqs/copy-to-markdown",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icons": {
     "16": "icons/icon.png",
     "32": "icons/icon.png",
