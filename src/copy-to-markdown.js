@@ -33,7 +33,7 @@ browser.contextMenus.onClicked.addListener(async (info, tab) => {
         if (selection.rangeCount === 0) {
           return '';
         }
-      
+
         const selectionRange = selection.getRangeAt(0); // Only consider the first range
         const container = selectionRange.commonAncestorContainer;
       
@@ -63,10 +63,13 @@ browser.contextMenus.onClicked.addListener(async (info, tab) => {
             floater.remove();
           }
         }
-      
+
         if (containerTagName === '') {
-          return wrapper.innerHTML;
+          if (wrapper.innerHTML === '') {
+            return window.getSelection().toString();
           }
+          return wrapper.innerHTML;
+        }
       
         // For preformatted tags, content needs to be wrapped inside `<code>`
         // or it would not be considered as fenced code block
@@ -81,6 +84,10 @@ browser.contextMenus.onClicked.addListener(async (info, tab) => {
           `;
         }
 
+        if (wrapper.innerHTML === '') {
+          return '<' + containerTagName + '>' + window.getSelection().toString() + '</' + containerTagName + '>';
+        }
+
         return '<' + containerTagName + '>' + wrapper.innerHTML + '</' + containerTagName + '>';
       },
       args: []
@@ -93,8 +100,18 @@ browser.contextMenus.onClicked.addListener(async (info, tab) => {
 
   await browser.scripting.executeScript({
     target : {tabId : tab.id, allFrames : true},
-    func: (markdownValue) => { 
-      navigator.clipboard.writeText(markdownValue);
+    func: async (markdownValue) => {
+      try {
+        await navigator.clipboard.writeText(markdownValue);
+      } catch (error) {
+        const inputElement = document.createElement('textarea');
+        document.body.append(inputElement);
+        inputElement.value = markdownValue;
+        inputElement.focus();
+        inputElement.select();
+        document.execCommand('Copy');
+        inputElement.remove();
+      }
     },
     args: [markdownData]
   });
